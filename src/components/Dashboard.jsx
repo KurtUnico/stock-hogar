@@ -138,34 +138,34 @@ export default function Dashboard({ productos, stockItems = [], eventos, histori
       </div>
 
       <div className="shelf-grid">
-        <button className="jar-tile jar-tile--ok" onClick={onVerStock} style={{ border: 'none', textAlign: 'left' }}>
+        <button className="jar-tile jar-tile--ok" onClick={() => onVerStock('ok')} style={{ border: 'none', textAlign: 'left' }}>
           <div className="jar-tile__label">OK</div>
           <div className="jar-tile__value">{resumen.ok}</div>
           <div className="jar-tile__bar-track">
             <div className="jar-tile__bar-fill" style={{ width: `${pct(resumen.ok)}%` }} />
           </div>
         </button>
-        <button className="jar-tile jar-tile--warn" onClick={onVerStock} style={{ border: 'none', textAlign: 'left' }}>
+        <button className="jar-tile jar-tile--warn" onClick={() => onVerStock('por-agotarse')} style={{ border: 'none', textAlign: 'left' }}>
           <div className="jar-tile__label">Por agotarse</div>
           <div className="jar-tile__value">{resumen.porAgotarse}</div>
           <div className="jar-tile__bar-track">
             <div className="jar-tile__bar-fill" style={{ width: `${pct(resumen.porAgotarse)}%` }} />
           </div>
         </button>
-        <button className="jar-tile jar-tile--danger" onClick={onVerCompras} style={{ border: 'none', textAlign: 'left' }}>
+        <button className="jar-tile jar-tile--danger" onClick={() => onVerStock('comprar')} style={{ border: 'none', textAlign: 'left' }}>
           <div className="jar-tile__label">Comprar</div>
           <div className="jar-tile__value">{resumen.comprar}</div>
           <div className="jar-tile__bar-track">
             <div className="jar-tile__bar-fill" style={{ width: `${pct(resumen.comprar)}%` }} />
           </div>
         </button>
-        <div className="jar-tile jar-tile--total">
+        <button className="jar-tile jar-tile--total" onClick={() => onVerStock(null)} style={{ border: 'none', textAlign: 'left' }}>
           <div className="jar-tile__label">Total</div>
           <div className="jar-tile__value">{resumen.total}</div>
           <div className="jar-tile__bar-track">
             <div className="jar-tile__bar-fill" style={{ width: '100%' }} />
           </div>
-        </div>
+        </button>
       </div>
 
       {mostrarTranquilidad && (

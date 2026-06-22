@@ -149,20 +149,17 @@ button {
 .icon-btn {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 12px;
   border: none;
-  background: rgba(255, 255, 255, 0.22);
+  background: var(--accent);
   color: #fff;
-  font-size: 17px;
+  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.15s ease, background 0.15s ease;
-  /* En iOS el emoji 🛒 puede tener fondo propio que tapa el círculo —
-     el outline blanco lo hace visible sobre cualquier color de fondo. */
-  outline: 1.5px solid rgba(255, 255, 255, 0.5);
 }
-.icon-btn:active { transform: scale(0.92); background: rgba(255,255,255,0.35); }
+.icon-btn:active { transform: scale(0.92); background: #c8921e; }
 
 .main-content {
   flex: 1;

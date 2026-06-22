@@ -10,10 +10,16 @@ const ESTADOS = [
   { id: STATUS.COMPRAR, label: 'Comprar' }
 ];
 
-export default function StockList({ productos, stockItems = [], categorias, onAjustar, onEditar, onNuevo, historialCompras = [], moneda = 'UYU' }) {
+export default function StockList({ productos, stockItems = [], categorias, onAjustar, onEditar, onNuevo, historialCompras = [], moneda = 'UYU', filtroInicial = null }) {
   const [busqueda, setBusqueda] = useState('');
   const [categoria, setCategoria] = useState('Todas');
-  const [estado, setEstado] = useState('todos');
+  const [estado, setEstado] = useState(filtroInicial || 'todos');
+
+  // Cuando el usuario llega desde el Dashboard con un filtro específico
+  // (ej. click en "OK", "Por agotarse", "Comprar" o "Total"), lo aplicamos.
+  React.useEffect(() => {
+    setEstado(filtroInicial || 'todos');
+  }, [filtroInicial]);
 
   const filtrados = useMemo(() => {
     return productos.filter((p) => {
