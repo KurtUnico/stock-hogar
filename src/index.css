@@ -200,7 +200,12 @@ button {
   transition: color 0.15s ease;
 }
 
-.bottom-nav__item .bottom-nav__icon { font-size: 20px; }
+.bottom-nav__item .bottom-nav__icon {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .bottom-nav__item.is-active { color: var(--primary); }
 
