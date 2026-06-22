@@ -125,7 +125,7 @@ button {
   width: 34px;
   height: 34px;
   border-radius: 10px;
-  background: var(--bg);
+  background: var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -151,15 +151,15 @@ button {
   height: 40px;
   border-radius: 12px;
   border: none;
-  background: var(--bg);
-  color: var(--primary);
+  background: var(--accent);
+  color: #1a1a1a;
   font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.15s ease, background 0.15s ease;
 }
-.icon-btn:active { transform: scale(0.92); background: #e8e0d2; }
+.icon-btn:active { transform: scale(0.92); background: #c8921e; }
 
 .main-content {
   flex: 1;
