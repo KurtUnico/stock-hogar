@@ -125,7 +125,7 @@ button {
   width: 34px;
   height: 34px;
   border-radius: 10px;
-  background: var(--accent);
+  background: rgba(255, 255, 255, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -151,7 +151,7 @@ button {
   height: 40px;
   border-radius: 12px;
   border: none;
-  background: var(--accent);
+  background: rgba(255, 255, 255, 0.22);
   color: #fff;
   font-size: 18px;
   display: flex;
@@ -159,7 +159,7 @@ button {
   justify-content: center;
   transition: transform 0.15s ease, background 0.15s ease;
 }
-.icon-btn:active { transform: scale(0.92); background: #c8921e; }
+.icon-btn:active { transform: scale(0.92); background: rgba(255,255,255,0.35); }
 
 .main-content {
   flex: 1;
