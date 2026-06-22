@@ -919,7 +919,13 @@ export default function App() {
       <header className="app-header">
         <div className="app-header__top">
           <div className="app-header__brand">
-            <div className="app-header__brand-mark">🫙</div>
+            <div className="app-header__brand-mark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M8 2h8"/>
+                <path d="M9 2v2.5a5 5 0 0 0-5 5v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9a5 5 0 0 0-5-5V2"/>
+                <path d="M7 12h10"/>
+              </svg>
+            </div>
             <div>
               <p className="app-header__title">Stock Hogar</p>
               <p className="app-header__subtitle">{TAB_SUBTITLE[activeTab]}</p>
