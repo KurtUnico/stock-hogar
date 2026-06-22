@@ -39,7 +39,10 @@
   --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
 
   --nav-h: 68px;
-  --header-h: 74px;
+  /* En iOS PWA, el header crece con el safe-area-inset-top (notch/Dynamic
+     Island). La variable --header-h se usa para anclar elementos sticky
+     debajo del header — necesita reflejar esa altura real. */
+  --header-h: calc(env(safe-area-inset-top, 0px) + 74px);
 }
 
 * { box-sizing: border-box; }
@@ -100,7 +103,9 @@ button {
   z-index: 5;
   background: var(--primary);
   color: #fff;
-  padding: 18px 18px 16px;
+  /* env(safe-area-inset-top) cubre el notch/Dynamic Island en iOS cuando
+     la PWA se instala con black-translucent. En Android y desktop es 0. */
+  padding: calc(env(safe-area-inset-top, 0px) + 18px) 18px 16px;
   border-radius: 0 0 24px 24px;
 }
 
