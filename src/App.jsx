@@ -66,12 +66,14 @@ export default function App() {
 
   const [activeTab, setActiveTab] = useState('dashboard');
   const [vistaComprasInicial, setVistaComprasInicial] = useState(null);
+  const [filtroStockInicial, setFiltroStockInicial] = useState(null);
   // Navegación normal (BottomNav, ícono del header, "Ver todo", etc.): si no
   // es específicamente "ir a Voy al súper", no forzamos ninguna sub-vista
   // dentro de Compras — el usuario entra donde corresponda por defecto
   // (lista, o compra activa si hay una en curso).
   const cambiarTab = (tab) => {
     setVistaComprasInicial(null);
+    setFiltroStockInicial(null);
     setActiveTab(tab);
   };
   const [productos, setProductos] = useState([]);
@@ -938,7 +940,11 @@ export default function App() {
             historialCompras={historialCompras}
             preferencias={preferencias}
             onVerCompras={() => cambiarTab('compras')}
-            onVerStock={() => cambiarTab('stock')}
+            onVerStock={(filtro) => {
+              setFiltroStockInicial(filtro || null);
+              setVistaComprasInicial(null);
+              setActiveTab('stock');
+            }}
             onIrAjustes={() => cambiarTab('ajustes')}
             onVerVoyAlSuper={() => {
               setVistaComprasInicial('super');
@@ -957,6 +963,7 @@ export default function App() {
             onNuevo={abrirNuevoProducto}
             historialCompras={historialCompras}
             moneda={preferencias.moneda}
+            filtroInicial={filtroStockInicial}
           />
         )}
 
